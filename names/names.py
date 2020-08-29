@@ -1,5 +1,6 @@
 import time
 
+
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
@@ -18,10 +19,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-new_list = []
-assert len(names_1) == len(names_2)
-for index in range(len(names_1)):
-    new_list.append(names_1[index] + names_2[index])
+duplicates = frozenset(names_1).intersection(names_2)
 
 
 end_time = time.time()
